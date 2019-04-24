@@ -12,6 +12,16 @@ public class ShoppingCart {
   return cartItems.size();
  }
 
+ public void updateCartItem(int itemIdx, int qty) {
+   try {
+    CartItem item = cartItems.get(itemIdx);
+    item.setQuantity(qty);
+   } catch (IndexOutOfBoundsException e) {
+     e.printStackTrace();
+   }
+   
+ }
+
  public void deleteCartItem(int itemIdx) {
    try {
      cartItems.remove(itemIdx);
